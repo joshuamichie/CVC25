@@ -1,0 +1,8 @@
+[
+  { "date": "2025-03-15", "Liberal": 28, "Conservative": 32, "NDP": 17, "Bloc Québécois": 7, "Green": 3, "PPC": 1 },
+  { "date": "2025-03-22", "Liberal": 29, "Conservative": 34, "NDP": 16, "Bloc Québécois": 7, "Green": 3, "PPC": 1 },
+  { "date": "2025-03-29", "Liberal": 30, "Conservative": 35, "NDP": 15, "Bloc Québécois": 7, "Green": 2, "PPC": 1 },
+  { "date": "2025-04-01", "Liberal": 33, "Conservative": 36, "NDP": 14, "Bloc Québécois": 6, "Green": 2, "PPC": 1 },
+  { "date": "2025-04-08", "Liberal": 39, "Conservative": 35, "NDP": 12, "Bloc Québécois": 6, "Green": 2, "PPC": 1 },
+  { "date": "2025-04-10", "Liberal": 42, "Conservative": 36, "NDP": 11, "Bloc Québécois": 6, "Green": 2, "PPC": 1 }
+]

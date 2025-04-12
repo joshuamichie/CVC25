@@ -1,0 +1,56 @@
+{
+  "Liberal": { 
+    "Economy": 2, 
+    "Climate": 3, 
+    "Healthcare": 4, 
+    "Indigenous Rights": 2,
+    "Housing": 3,
+    "Immigration": 4,
+    "Taxation": 1
+  },
+  "Conservative": { 
+    "Economy": 4, 
+    "Climate": -2, 
+    "Healthcare": 1, 
+    "Indigenous Rights": -1,
+    "Housing": 2,
+    "Immigration": -3,
+    "Taxation": 4
+  },
+  "NDP": { 
+    "Economy": 1, 
+    "Climate": 5, 
+    "Healthcare": 5, 
+    "Indigenous Rights": 4,
+    "Housing": 4,
+    "Immigration": 3,
+    "Taxation": -2
+  },
+  "Bloc Québécois": {
+    "Economy": 0,
+    "Climate": 2,
+    "Healthcare": 3,
+    "Indigenous Rights": 1,
+    "Housing": 2,
+    "Immigration": -1,
+    "Taxation": -3
+  },
+  "Green": {
+    "Economy": -1,
+    "Climate": 5,
+    "Healthcare": 3,
+    "Indigenous Rights": 5,
+    "Housing": 3,
+    "Immigration": 2,
+    "Taxation": -3
+  },
+  "PPC": {
+    "Economy": 5,
+    "Climate": -5,
+    "Healthcare": -2,
+    "Indigenous Rights": -4,
+    "Housing": 3,
+    "Immigration": -5,
+    "Taxation": 5
+  }
+}
