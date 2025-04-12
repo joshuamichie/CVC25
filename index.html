@@ -53,21 +53,20 @@
       const loadingMessage = document.getElementById('loading-message');
       try {
         const platformsRes = await fetch('platforms.json');
-        if (!platformsRes.ok) throw new Error(`HTTP error ${platformsRes.status}`);
+        if (!platformsRes.ok) throw new Error(`platforms.json HTTP error: ${platformsRes.status}`);
         platformsData = await platformsRes.json();
 
         const pollingRes = await fetch('polling.json');
-        if (!pollingRes.ok) throw new Error(`HTTP error ${pollingRes.status}`);
+        if (!pollingRes.ok) throw new Error(`polling.json HTTP error: ${pollingRes.status}`);
         pollingData = await pollingRes.json();
 
-        // ✅ All good, render the app
         loadingMessage?.remove();
         ReactDOM.render(<App />, document.getElementById('app'));
       } catch (err) {
-        console.error('❌ Failed to load JSON:', err);
+        console.error('❌ Failed to fetch JSON data:', err);
         if (loadingMessage) {
-          loadingMessage.textContent = "⚠️ Failed to load data. Check console or try refreshing.";
-          loadingMessage.style.color = "red";
+          loadingMessage.textContent = '⚠️ Failed to load data. Check console.';
+          loadingMessage.style.color = 'red';
         }
       }
     }
