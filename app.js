@@ -1,6 +1,6 @@
-// ✅ Voter’s Compass 2025 – app.js (static-ready, JSX, Babel-compatible)
+// ✅ app.js — safe for use with <script type="text/babel" src="app.js">
 
-// Header component
+// Header
 const Header = () => (
   <header className="text-center mb-8">
     <h1 className="text-3xl font-bold text-blue-900 mb-2">Voter's Compass 2025</h1>
@@ -13,45 +13,33 @@ const Header = () => (
   </header>
 );
 
-// Navigation steps
+// Navigation
 const Navigation = ({ currentStep, setCurrentStep, totalSteps }) => (
   <nav className="mb-8">
     <div className="flex justify-between items-center">
       <div className="text-sm font-medium text-gray-500">Step {currentStep} of {totalSteps}</div>
       <div className="flex space-x-2">
         {currentStep > 1 && (
-          <button
-            onClick={() => setCurrentStep(currentStep - 1)}
-            className="px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50"
-          >Back</button>
+          <button onClick={() => setCurrentStep(currentStep - 1)} className="px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm text-gray-700 hover:bg-gray-50">Back</button>
         )}
         {currentStep < totalSteps && (
-          <button
-            onClick={() => setCurrentStep(currentStep + 1)}
-            className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm text-sm hover:bg-blue-600"
-          >Next</button>
+          <button onClick={() => setCurrentStep(currentStep + 1)} className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-sm text-sm hover:bg-blue-600">Next</button>
         )}
       </div>
     </div>
     <div className="mt-4 w-full bg-gray-200 rounded-full h-2.5">
-      <div
-        className="bg-blue-500 h-2.5 rounded-full transition-all duration-500"
-        style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-      ></div>
+      <div className="bg-blue-500 h-2.5 rounded-full transition-all duration-500" style={{ width: `${(currentStep / totalSteps) * 100}%` }}></div>
     </div>
   </nav>
 );
 
-// Slider component
+// Value Slider
 const ValueSlider = ({ issue, value, onChange }) => (
   <div className="mb-6 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
     <div className="flex justify-between mb-2">
       <label className="block text-sm font-medium text-gray-700">{issue}</label>
       <span className="text-sm text-gray-500">
-        {value === -5 ? "Strongly Oppose" :
-         value === 0 ? "Neutral" :
-         value === 5 ? "Strongly Support" :
-         value < 0 ? "Oppose" : "Support"}
+        {value === -5 ? "Strongly Oppose" : value === 0 ? "Neutral" : value === 5 ? "Strongly Support" : value < 0 ? "Oppose" : "Support"}
       </span>
     </div>
     <input
@@ -71,7 +59,7 @@ const ValueSlider = ({ issue, value, onChange }) => (
   </div>
 );
 
-// Step 1: Values Assessment
+// Step 1 – Value Alignment Sliders
 const ValuesAssessment = ({ userValues, setUserValues }) => {
   const issues = Object.keys(platformsData["Liberal"] || {});
   const handleChange = (issue, newValue) => {
@@ -81,22 +69,15 @@ const ValuesAssessment = ({ userValues, setUserValues }) => {
   return (
     <section className="page-transition">
       <h2 className="text-xl font-semibold text-gray-800 mb-4">Where Do You Stand?</h2>
-      <p className="text-gray-600 mb-6">
-        Adjust the sliders to indicate how strongly you support or oppose each issue.
-      </p>
+      <p className="text-gray-600 mb-6">Adjust the sliders to indicate how strongly you support or oppose each issue.</p>
       {issues.map(issue => (
-        <ValueSlider
-          key={issue}
-          issue={issue}
-          value={userValues[issue] || 0}
-          onChange={handleChange}
-        />
+        <ValueSlider key={issue} issue={issue} value={userValues[issue] || 0} onChange={handleChange} />
       ))}
     </section>
   );
 };
 
-// Placeholder steps (to be filled with real components later)
+// Step 2 & 3 – Placeholder Components
 const Placeholder = ({ title }) => (
   <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
     <h2 className="text-xl font-semibold text-gray-800 mb-4">{title}</h2>
@@ -104,7 +85,7 @@ const Placeholder = ({ title }) => (
   </div>
 );
 
-// 🧠 Main App Component (connects everything)
+// App Root Component
 const App = () => {
   const [currentStep, setCurrentStep] = React.useState(1);
   const [userValues, setUserValues] = React.useState({});
